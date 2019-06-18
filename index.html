@@ -1,0 +1,461 @@
+	<div id="flex-guide full-width">
+		<div class="container">
+			<div class="col s12 mb24">
+				<p class="t-center">
+					The Flexbox Layout (Flexible Box) module (a W3C Candidate Recommendation as of October 2017) aims at providing a more efficient way to lay out, align and distribute space among items in a container, even when their size is unknown and/or dynamic (thus the word "flex").
+				</p>
+			</div>
+
+			<div class="grid-cont full-width mb0">
+				<div class="output-section bg-lpink col s12">
+					<h2 class="mb12">Grid layout</h2>
+
+					<div class="row h-flex">
+						<div class="col s12">
+							<div class="block bg-pink">col s12</div>
+						</div>
+					</div>
+
+					<div class="row h-flex">
+						<div class="col s6">
+							<div class="block bg-pink">col s6</div>
+						</div>
+						<div class="col s6">
+							<div class="block bg-pink">col s6</div>
+						</div>
+					</div>
+
+					<div class="row h-flex">
+						<div class="col s4">
+							<div class="block bg-pink">col s4</div>
+						</div>
+						<div class="col s4">
+							<div class="block bg-pink">col s4</div>
+						</div>
+						<div class="col s4">
+							<div class="block bg-pink">col s4</div>
+						</div>
+					</div>
+
+					<div class="row h-flex">
+						<div class="col s3">
+							<div class="block bg-pink">col s3</div>
+						</div>
+						<div class="col s3">
+							<div class="block bg-pink">col s3</div>
+						</div>
+						<div class="col s3">
+							<div class="block bg-pink">col s3</div>
+						</div>
+						<div class="col s3">
+							<div class="block bg-pink">col s3</div>
+						</div>
+					</div>
+
+					<div class="row h-flex">
+						<div class="col s1">
+							<div class="block bg-pink">col s1</div>
+						</div>
+						<div class="col s1">
+							<div class="block bg-pink">col s1</div>
+						</div>
+						<div class="col s1">
+							<div class="block bg-pink">col s1</div>
+						</div>
+						<div class="col s1">
+							<div class="block bg-pink">col s1</div>
+						</div>
+						<div class="col s1">
+							<div class="block bg-pink">col s1</div>
+						</div>
+						<div class="col s1">
+							<div class="block bg-pink">col s1</div>
+						</div>
+						<div class="col s1">
+							<div class="block bg-pink">col s1</div>
+						</div>
+						<div class="col s1">
+							<div class="block bg-pink">col s1</div>
+						</div>
+						<div class="col s1">
+							<div class="block bg-pink">col s1</div>
+						</div>
+						<div class="col s1">
+							<div class="block bg-pink">col s1</div>
+						</div>
+						<div class="col s1">
+							<div class="block bg-pink">col s1</div>
+						</div>
+						<div class="col s1">
+							<div class="block bg-pink">col s1</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+
+			<div class="grid-cont full-width mb0">
+				<div class="output-section bg-lpink col s12">
+					<h2 class="mb12">Grid Offset</h2>
+
+					<div class="row h-flex">
+						<div class="col _offset-1"></div>
+						<div class="col s11">
+							<div class="block bg-pink">offset 1</div>
+						</div>
+					</div>
+
+					<div class="row h-flex">
+						<div class="col s10">
+							<div class="block bg-pink">offset 2</div>
+						</div>
+						<div class="col s2"></div>
+					</div>
+				</div>
+			</div>
+
+			<div class="grid-cont full-width mb0">
+				<div class="output-section bg-lpink col s12">
+					<h2 class="mb12">Flexbox Element/Properties</h2>
+
+					<div class="row h-flex">
+						<div class="col s4">
+							<a href="#flex-direction">flex-direction</a><br>
+							<a href="#flex-wrap">flex-wrap</a><br>
+							<a href="#flex-flow">flex-flow</a><br>
+							<a href="#flex-basis">flex-basis</a>
+						</div>
+						<div class="col s4">
+							<a href="#flex-grow">flex-grow</a><br>
+							<a href="#flex-shrink">flex-shrink</a><br>
+							<a href="#justify-content">justify content</a><br>
+							<a href="#align-items">align-items</a>
+						</div>
+						<div class="col s4">
+							<a href="#order">order</a><br>
+							<a href="#align-content">align-content</a><br>
+							<a href="#align-self">align-self</a>
+						</div>
+					</div>
+				</div>
+			</div>
+
+
+			<div class="grid-cont full-width mb0">
+				<div id="flex-direction" class="output-section bg-lpink col s12">
+					<h2>flex-direction</h2>
+					<p>You can change the direction of a row/column at any given breakpoint!</p>
+
+					<p class="mb24">flex-direction: row | column | row-reverse | column-reverse</p>
+
+
+					<p class="mb12">flex-direction: row-reverse</p>
+					<div class="row h-flex row-reverse">
+						<div class="col s4">
+							<div class="block bg-pink">1</div>
+						</div>
+						<div class="col s4">
+							<div class="block bg-pink">2</div>
+						</div>
+						<div class="col s4">
+							<div class="block bg-pink">3</div>
+						</div>
+					</div>
+
+					<p class="mb12">flex-direction: column</p>
+					<div class="row h-flex f-column">
+						<div class="col s4">
+							<div class="block bg-pink">1</div>
+						</div>
+						<div class="col s4">
+							<div class="block bg-pink">2</div>
+						</div>
+						<div class="col s4">
+							<div class="block bg-pink">3</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+
+			<div class="grid-cont full-width mb0">
+				<div id="flex-wrap" class="output-section bg-lpink col s12">
+					<h2>flex-wrap</h2>
+					<p>A property that sets whether flex items are forced onto one line or can wrap onto multiple lines. If wrapping is allowed, it sets the direction that lines are stacked.</p>
+
+					<p class="mb24">flex-wrap: nowrap | wrap | wrap-reverse</p>
+
+
+					<p class="mb12">flex-wrap: nowrap</p>
+					<div class="row h-flex no-wrap">
+						<div class="col s4">
+							<div class="block bg-pink">1</div>
+						</div>
+						<div class="col s4">
+							<div class="block bg-pink">2</div>
+						</div>
+						<div class="col s4">
+							<div class="block bg-pink">3</div>
+						</div>
+						<div class="col s4">
+							<div class="block bg-pink">4</div>
+						</div>
+						<div class="col s4">
+							<div class="block bg-pink">5</div>
+						</div>
+						<div class="col s4">
+							<div class="block bg-pink">6</div>
+						</div>
+					</div>
+
+					<p class="mb12">flex-wrap: wrap</p>
+					<div class="row h-flex wrap">
+						<div class="col s4">
+							<div class="block bg-pink">1</div>
+						</div>
+						<div class="col s4">
+							<div class="block bg-pink">2</div>
+						</div>
+						<div class="col s4">
+							<div class="block bg-pink">3</div>
+						</div>
+						<div class="col s4">
+							<div class="block bg-pink">4</div>
+						</div>
+						<div class="col s4">
+							<div class="block bg-pink">5</div>
+						</div>
+						<div class="col s4">
+							<div class="block bg-pink">6</div>
+						</div>
+					</div>
+
+					<p class="mb12">flex-wrap: wrap-reverse</p>
+					<div class="row h-flex wrap-reverse">
+						<div class="col s4">
+							<div class="block bg-pink">1</div>
+						</div>
+						<div class="col s4">
+							<div class="block bg-pink">2</div>
+						</div>
+						<div class="col s4">
+							<div class="block bg-pink">3</div>
+						</div>
+						<div class="col s4">
+							<div class="block bg-pink">4</div>
+						</div>
+						<div class="col s4">
+							<div class="block bg-pink">5</div>
+						</div>
+						<div class="col s4">
+							<div class="block bg-pink">6</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="grid-cont full-width mb0">
+				<div id="flex-flow" class="output-section bg-lpink col s12">
+					<h2>flex-flow</h2>
+					<p>A property that sets whether flex items are forced onto one line or can wrap onto multiple lines. If wrapping is allowed, it sets the direction that lines are stacked.</p>
+					<br>
+					<p class="mb24">flex-flow: row nowrap | row wrap | row wrap-reverse<br>
+						&nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; column nowrap | column wrap | column wrap-reverse
+					</p>
+
+
+					<p class="mb12">flex-flow: row nowrap</p>
+					<div class="row h-flex row-nowrap">
+						<div class="col s4">
+							<div class="block bg-pink">1</div>
+						</div>
+						<div class="col s4">
+							<div class="block bg-pink">2</div>
+						</div>
+						<div class="col s4">
+							<div class="block bg-pink">3</div>
+						</div>
+						<div class="col s4">
+							<div class="block bg-pink">4</div>
+						</div>
+						<div class="col s4">
+							<div class="block bg-pink">5</div>
+						</div>
+						<div class="col s4">
+							<div class="block bg-pink">6</div>
+						</div>
+					</div>
+
+					<p class="mb12">flex-flow: row-wrap</p>
+					<div class="row h-flex wrap">
+						<div class="col s4">
+							<div class="block bg-pink">1</div>
+						</div>
+						<div class="col s4">
+							<div class="block bg-pink">2</div>
+						</div>
+						<div class="col s4">
+							<div class="block bg-pink">3</div>
+						</div>
+						<div class="col s4">
+							<div class="block bg-pink">4</div>
+						</div>
+						<div class="col s4">
+							<div class="block bg-pink">5</div>
+						</div>
+						<div class="col s4">
+							<div class="block bg-pink">6</div>
+						</div>
+					</div>
+
+					<p class="mb12">flex-flow: row-wrap-reverse</p>
+					<div class="row h-flex wrap-reverse">
+						<div class="col s4">
+							<div class="block bg-pink">1</div>
+						</div>
+						<div class="col s4">
+							<div class="block bg-pink">2</div>
+						</div>
+						<div class="col s4">
+							<div class="block bg-pink">3</div>
+						</div>
+						<div class="col s4">
+							<div class="block bg-pink">4</div>
+						</div>
+						<div class="col s4">
+							<div class="block bg-pink">5</div>
+						</div>
+						<div class="col s4">
+							<div class="block bg-pink">6</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="grid-cont full-width mb0">
+				<div id="flex-basis" class="output-section bg-lpink col s12">
+					<h2>flex-basis</h2>
+					<p>It sets the initial main size of a flex item. It sets the size of the content box unless otherwise set with box-sizing.</p>
+					<br>
+					<p class="mb24">flex-flow: auto | 0 | value (100px)
+					</p>
+
+
+					<p class="mb12">flex-basis: auto</p>
+					<div class="row h-flex">
+						<div class="col s4 basis-auto">
+							<div class="block bg-pink">1</div>
+						</div>
+						<div class="col s4">
+							<div class="block bg-pink">2</div>
+						</div>
+						<div class="col s4">
+							<div class="block bg-pink">3</div>
+						</div>
+					</div>
+
+					<p class="mb12">flex-basis: 0</p>
+					<div class="row h-flex">
+						<div class="col s4 basis-0">
+							<div class="block bg-pink">1</div>
+						</div>
+						<div class="col s4">
+							<div class="block bg-pink">2</div>
+						</div>
+						<div class="col s4">
+							<div class="block bg-pink">3</div>
+						</div>
+					</div>
+
+					<p class="mb12">flex-basis: 150px</p>
+					<div class="row h-flex">
+						<div class="col s4 basis-value">
+							<div class="block bg-pink">1</div>
+						</div>
+						<div class="col s4">
+							<div class="block bg-pink">2</div>
+						</div>
+						<div class="col s4">
+							<div class="block bg-pink">3</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="grid-cont full-width mb0">
+				<div id="flex-grow" class="output-section bg-lpink col s12">
+					<h2>flex-grow</h2>
+					<p>It  specifies how much a flex item will grow relative to the rest of the flex items.</p>
+					<br>
+					<p class="mb24">flex-grow: initial | unset | inherit | 1
+					</p>
+
+
+					<p class="mb12">flex-grow: 1</p>
+					<div class="row h-flex">
+						<div class="col s4"  style="flex-grow: 1">
+							<div class="block bg-pink">1</div>
+						</div>
+						<div class="col">
+							<div class="block bg-pink">2</div>
+						</div>
+						<div class="col">
+							<div class="block bg-pink">3</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="grid-cont full-width mb0">
+				<div id="flex-shrink" class="output-section bg-lpink col s12">
+					<h2>flex-shrink</h2>
+					<p>It specifies how much a flex item will shrink relative to the rest of the flex items.</p>
+					<br>
+					<p class="mb24">flex-shrink: value <br>
+						The value must be a number, default value is 1.
+					</p>
+
+
+					<p class="mb12">flex-shrink: 0</p>
+					<div class="row h-flex">
+						<div class="col s4">
+							<div class="block bg-pink">1</div>
+						</div>
+						<div class="col s4 shrink-unset">
+							<div class="block bg-pink">shrink-unset</div>
+						</div>
+						<div class="col s4">
+							<div class="block bg-pink">1</div>
+						</div>
+						<div class="col s4">
+							<div class="block bg-pink">1</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="grid-cont full-width mb0">
+				<div id="justify-content" class="output-section bg-lpink col s12">
+					<h2>justify-content</h2>
+					<p>Used to align the flex items.</p>
+					<br>
+					<p class="mb24">justify-content: center | flex-end | flex-start | space- between | space-around
+					</p>
+
+
+					<p class="mb12"></p>
+					<div class="row h-flex justify-between">
+						<div class="col s3">
+							<div class="block bg-pink">1</div>
+						</div>
+						<div class="col s3">
+							<div class="block bg-pink">2</div>
+						</div>
+						<div class="col s3">
+							<div class="block bg-pink">3</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
