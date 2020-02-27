@@ -1,468 +1,424 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta http-equiv="X-UA-Compatible" content="ie=edge">
 	<link rel="stylesheet" type="text/css" href="main.css">
-	<title>Document</title>
+	<link href="https://fonts.googleapis.com/css?family=Fira+Sans&display=swap" rel="stylesheet">
+	<title>SherableFlexbox</title>
 </head>
+
 <body>
-	<div id="flex-guide full-width">
-		<div class="container">
-			<div class="col s12 mb24">
-				<p class="t-center">
-					The Flexbox Layout (Flexible Box) module (a W3C Candidate Recommendation as of October 2017) aims at providing a more efficient way to lay out, align and distribute space among items in a container, even when their size is unknown and/or dynamic (thus the word "flex").
+	<div id="flex-guide" class="w-100">
+		<div id="app" class="h-flex h-100">
+			<div class="left-panel">
+				<p>
+					<img src="https://gallery.mailchimp.com/a14a1918864c088635c29765b/images/0626f8cb-9ec4-450f-9062-06bd8347deeb.png"
+						alt="Sherablecode logo" class="w-100 logo">
 				</p>
+				<!-- <br><br>
+				<ul>
+					<li>
+						Orientation
+					</li>
+					<li>
+						Alignment
+					</li>
+					<li>
+						Flexibility
+					</li>
+				</ul> -->
 			</div>
+			<div class="right-panel">
+				<div class="content-wrap w-100 mb12">
+					<div class="container">
+						<h1 class="t-rainbow">SherableFlexbox</h1>
+						<p class="t-center">
+							The Flexbox Layout (Flexible Box) module (a W3C Candidate Recommendation as of October 2017)
+							aims at providing a more efficient way to lay out, align and distribute space among items in
+							a
+							container, even when their size is unknown and/or dynamic (thus the word "flex").
+						</p>
 
-			<div class="grid-cont full-width mb0">
-				<div class="output-section bg-lpink col s12">
-					<h2 class="mb12">Grid layout</h2>
+						<div class="property-cont">
+							<div class="row items-center">
+								<div class="col s9 t-12">
+									<h4 class="semi-bold t-rainbow">flex-direction</h4>
+									<p>You can change the direction of a row/column at any given breakpoint!</p>
 
-					<div class="row h-flex">
-						<div class="col s12">
-							<div class="block bg-pink">col s12</div>
-						</div>
-					</div>
+									<div class="radio-select mb12">
+										<span>flex-direction:</span>
+										<input class="opacity-0" type="radio" id="f-row" value="f-row"
+											v-model="selectedDirection">
+										<label for="f-row">row</label>
 
-					<div class="row h-flex">
-						<div class="col s6">
-							<div class="block bg-pink">col s6</div>
-						</div>
-						<div class="col s6">
-							<div class="block bg-pink">col s6</div>
-						</div>
-					</div>
+										<input class="opacity-0" type="radio" id="f-column" value="f-column"
+											v-model="selectedDirection">
+										<label for="f-column">column</label>
 
-					<div class="row h-flex">
-						<div class="col s4">
-							<div class="block bg-pink">col s4</div>
-						</div>
-						<div class="col s4">
-							<div class="block bg-pink">col s4</div>
-						</div>
-						<div class="col s4">
-							<div class="block bg-pink">col s4</div>
-						</div>
-					</div>
+										<input class="opacity-0" type="radio" id="row-reverse" value="row-reverse"
+											v-model="selectedDirection">
+										<label for="row-reverse">row-reverse</label>
 
-					<div class="row h-flex">
-						<div class="col s3">
-							<div class="block bg-pink">col s3</div>
-						</div>
-						<div class="col s3">
-							<div class="block bg-pink">col s3</div>
-						</div>
-						<div class="col s3">
-							<div class="block bg-pink">col s3</div>
-						</div>
-						<div class="col s3">
-							<div class="block bg-pink">col s3</div>
-						</div>
-					</div>
+										<input class="opacity-0" type="radio" id="column-reverse" value="column-reverse"
+											v-model="selectedDirection">
+										<label for="column-reverse">column-reverse</label>
+									</div>
 
-					<div class="row h-flex">
-						<div class="col s1">
-							<div class="block bg-pink">col s1</div>
-						</div>
-						<div class="col s1">
-							<div class="block bg-pink">col s1</div>
-						</div>
-						<div class="col s1">
-							<div class="block bg-pink">col s1</div>
-						</div>
-						<div class="col s1">
-							<div class="block bg-pink">col s1</div>
-						</div>
-						<div class="col s1">
-							<div class="block bg-pink">col s1</div>
-						</div>
-						<div class="col s1">
-							<div class="block bg-pink">col s1</div>
-						</div>
-						<div class="col s1">
-							<div class="block bg-pink">col s1</div>
-						</div>
-						<div class="col s1">
-							<div class="block bg-pink">col s1</div>
-						</div>
-						<div class="col s1">
-							<div class="block bg-pink">col s1</div>
-						</div>
-						<div class="col s1">
-							<div class="block bg-pink">col s1</div>
-						</div>
-						<div class="col s1">
-							<div class="block bg-pink">col s1</div>
-						</div>
-						<div class="col s1">
-							<div class="block bg-pink">col s1</div>
-						</div>
-					</div>
-				</div>
-			</div>
+									<div class="row h-flex" v-bind:class="[selectedDirection]">
+										<div class="col s4 mb12">
+											<div class="block bg-pink">1</div>
+										</div>
+										<div class="col s4 mb12">
+											<div class="block bg-pink">2</div>
+										</div>
+										<div class="col s4 mb12">
+											<div class="block bg-pink">3</div>
+										</div>
+									</div>
+								</div>
 
+								<div class="col s3 t-12"></div>
+							</div>
 
-			<div class="grid-cont full-width mb0">
-				<div class="output-section bg-lpink col s12">
-					<h2 class="mb12">Grid Offset</h2>
+						</div>
 
-					<div class="row h-flex">
-						<div class="col _offset-1"></div>
-						<div class="col s11">
-							<div class="block bg-pink">offset 1</div>
-						</div>
-					</div>
+						<div class="property-cont">
+							<div class="row items-center">
+								<div class="col s9 t-12">
+									<h4 class="semi-bold t-rainbow">flex-wrap</h4>
+									<p>A property that sets whether flex items are forced onto one line or can wrap onto
+										multiple
+										lines. If wrapping is allowed, it sets the direction that lines are stacked.</p>
 
-					<div class="row h-flex">
-						<div class="col s10">
-							<div class="block bg-pink">offset 2</div>
-						</div>
-						<div class="col s2"></div>
-					</div>
-				</div>
-			</div>
+									<div class="radio-select mb12">
+										<span>flex-wrap:</span>
+										<input class="opacity-0" type="radio" id="no-wrap" value="no-wrap"
+											v-model="selectedWrap">
+										<label for="no-wrap">nowrap</label>
 
-			<div class="grid-cont full-width mb0">
-				<div class="output-section bg-lpink col s12">
-					<h2 class="mb12">Flexbox Element/Properties</h2>
+										<input class="opacity-0" type="radio" id="wrap" value="wrap"
+											v-model="selectedWrap">
+										<label for="wrap">wrap</label>
 
-					<div class="row h-flex">
-						<div class="col s4">
-							<a href="#flex-direction">flex-direction</a><br>
-							<a href="#flex-wrap">flex-wrap</a><br>
-							<a href="#flex-flow">flex-flow</a><br>
-							<a href="#flex-basis">flex-basis</a>
-						</div>
-						<div class="col s4">
-							<a href="#flex-grow">flex-grow</a><br>
-							<a href="#flex-shrink">flex-shrink</a><br>
-							<a href="#justify-content">justify content</a><br>
-							<a href="#align-items">align-items</a>
-						</div>
-						<div class="col s4">
-							<a href="#order">order</a><br>
-							<a href="#align-content">align-content</a><br>
-							<a href="#align-self">align-self</a>
-						</div>
-					</div>
-				</div>
-			</div>
+										<input class="opacity-0" type="radio" id="wrap-reverse" value="wrap-reverse"
+											v-model="selectedWrap">
+										<label for="wrap-reverse">wrap-reverse</label>
+									</div>
+									<div class="row h-flex" v-bind:class="[selectedWrap]">
+										<div class="col s4">
+											<div class="block bg-pink">1</div>
+										</div>
+										<div class="col s4">
+											<div class="block bg-pink">2</div>
+										</div>
+										<div class="col s4">
+											<div class="block bg-pink">3</div>
+										</div>
+										<div class="col s4">
+											<div class="block bg-pink">4</div>
+										</div>
+										<div class="col s4">
+											<div class="block bg-pink">5</div>
+										</div>
+										<div class="col s4">
+											<div class="block bg-pink">6</div>
+										</div>
+									</div>
+								</div>
 
+								<div class="col s3 t-12"></div>
+							</div>
+						</div>
 
-			<div class="grid-cont full-width mb0">
-				<div id="flex-direction" class="output-section bg-lpink col s12">
-					<h2>flex-direction</h2>
-					<p>You can change the direction of a row/column at any given breakpoint!</p>
+						<div class="property-cont">
+							<div class="row items-center">
+								<div class="col s9 t-12">
+									<h4 class="semi-bold t-rainbow">flex-flow</h4>
+									<p>A property that sets whether flex items are forced onto one line or can wrap onto
+										multiple
+										lines. If wrapping is allowed, it sets the direction that lines are stacked.</p>
 
-					<p class="mb24">flex-direction: row | column | row-reverse | column-reverse</p>
+									<div class="radio-select mb12">
+										<span>flex-flow:</span>
+										<input class="opacity-0" type="radio" id="row-nowrap" value="row-nowrap"
+											v-model="selectedFlow">
+										<label for="row-nowrap">row nowrap</label>
 
+										<input class="opacity-0" type="radio" id="row-wrap" value="row-wrap"
+											v-model="selectedFlow">
+										<label for="row-wrap">row wrap</label>
 
-					<p class="mb12">flex-direction: row-reverse</p>
-					<div class="row h-flex row-reverse">
-						<div class="col s4">
-							<div class="block bg-pink">1</div>
-						</div>
-						<div class="col s4">
-							<div class="block bg-pink">2</div>
-						</div>
-						<div class="col s4">
-							<div class="block bg-pink">3</div>
-						</div>
-					</div>
+										<input class="opacity-0" type="radio" id="row-wrap-reverse"
+											value="row-wrap-reverse" v-model="selectedFlow">
+										<label for="row-wrap-reverse">row wrap-reverse</label>
+									</div>
 
-					<p class="mb12">flex-direction: column</p>
-					<div class="row h-flex f-column">
-						<div class="col s4">
-							<div class="block bg-pink">1</div>
-						</div>
-						<div class="col s4">
-							<div class="block bg-pink">2</div>
-						</div>
-						<div class="col s4">
-							<div class="block bg-pink">3</div>
-						</div>
-					</div>
-				</div>
-			</div>
+									<div class="row h-flex" v-bind:class="[selectedFlow]">
+										<div class="col s4">
+											<div class="block bg-pink">1</div>
+										</div>
+										<div class="col s4">
+											<div class="block bg-pink">2</div>
+										</div>
+										<div class="col s4">
+											<div class="block bg-pink">3</div>
+										</div>
+										<div class="col s4">
+											<div class="block bg-pink">4</div>
+										</div>
+										<div class="col s4">
+											<div class="block bg-pink">5</div>
+										</div>
+										<div class="col s4">
+											<div class="block bg-pink">6</div>
+										</div>
+									</div>
+								</div>
 
+								<div class="col s3 t-12"></div>
+							</div>
+						</div>
 
-			<div class="grid-cont full-width mb0">
-				<div id="flex-wrap" class="output-section bg-lpink col s12">
-					<h2>flex-wrap</h2>
-					<p>A property that sets whether flex items are forced onto one line or can wrap onto multiple lines. If wrapping is allowed, it sets the direction that lines are stacked.</p>
+						<div class="property-cont">
+							<div class="row items-center">
+								<div class="col s9 t-12">
+									<h4 class="semi-bold t-rainbow">flex-basis</h4>
+									<p>It sets the initial main size of a flex item. It sets the size of the content box
+										unless otherwise set with box-sizing.</p>
 
-					<p class="mb24">flex-wrap: nowrap | wrap | wrap-reverse</p>
+									<div class="radio-select mb12">
+										<span>flex-basis:</span>
+										<input class="opacity-0" type="radio" id="basis-auto" value="basis-auto"
+											v-model="selectedBasis">
+										<label for="basis-auto">auto</label>
 
+										<input class="opacity-0" type="radio" id="basis-0" value="basis-0"
+											v-model="selectedBasis">
+										<label for="basis-0">0</label>
 
-					<p class="mb12">flex-wrap: nowrap</p>
-					<div class="row h-flex no-wrap">
-						<div class="col s4">
-							<div class="block bg-pink">1</div>
-						</div>
-						<div class="col s4">
-							<div class="block bg-pink">2</div>
-						</div>
-						<div class="col s4">
-							<div class="block bg-pink">3</div>
-						</div>
-						<div class="col s4">
-							<div class="block bg-pink">4</div>
-						</div>
-						<div class="col s4">
-							<div class="block bg-pink">5</div>
-						</div>
-						<div class="col s4">
-							<div class="block bg-pink">6</div>
-						</div>
-					</div>
+										<input class="opacity-0" type="radio" id="basis-value" value="basis-value"
+											v-model="selectedBasis">
+										<label for="basis-value">value (150px)</label>
+									</div>
 
-					<p class="mb12">flex-wrap: wrap</p>
-					<div class="row h-flex wrap">
-						<div class="col s4">
-							<div class="block bg-pink">1</div>
-						</div>
-						<div class="col s4">
-							<div class="block bg-pink">2</div>
-						</div>
-						<div class="col s4">
-							<div class="block bg-pink">3</div>
-						</div>
-						<div class="col s4">
-							<div class="block bg-pink">4</div>
-						</div>
-						<div class="col s4">
-							<div class="block bg-pink">5</div>
-						</div>
-						<div class="col s4">
-							<div class="block bg-pink">6</div>
-						</div>
-					</div>
+									<div class="row">
+										<div class="col s4" v-bind:class="[selectedBasis]">
+											<div class="block bg-pink">1</div>
+										</div>
+										<div class="col s4">
+											<div class="block bg-pink">2</div>
+										</div>
+										<div class="col s4">
+											<div class="block bg-pink">3</div>
+										</div>
+									</div>
+								</div>
 
-					<p class="mb12">flex-wrap: wrap-reverse</p>
-					<div class="row h-flex wrap-reverse">
-						<div class="col s4">
-							<div class="block bg-pink">1</div>
+								<div class="col s3 t-12"></div>
+							</div>
 						</div>
-						<div class="col s4">
-							<div class="block bg-pink">2</div>
-						</div>
-						<div class="col s4">
-							<div class="block bg-pink">3</div>
-						</div>
-						<div class="col s4">
-							<div class="block bg-pink">4</div>
-						</div>
-						<div class="col s4">
-							<div class="block bg-pink">5</div>
-						</div>
-						<div class="col s4">
-							<div class="block bg-pink">6</div>
-						</div>
-					</div>
-				</div>
-			</div>
-
-			<div class="grid-cont full-width mb0">
-				<div id="flex-flow" class="output-section bg-lpink col s12">
-					<h2>flex-flow</h2>
-					<p>A property that sets whether flex items are forced onto one line or can wrap onto multiple lines. If wrapping is allowed, it sets the direction that lines are stacked.</p>
-					<br>
-					<p class="mb24">flex-flow: row nowrap | row wrap | row wrap-reverse<br>
-						&nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; column nowrap | column wrap | column wrap-reverse
-					</p>
 
 
-					<p class="mb12">flex-flow: row nowrap</p>
-					<div class="row h-flex row-nowrap">
-						<div class="col s4">
-							<div class="block bg-pink">1</div>
-						</div>
-						<div class="col s4">
-							<div class="block bg-pink">2</div>
-						</div>
-						<div class="col s4">
-							<div class="block bg-pink">3</div>
-						</div>
-						<div class="col s4">
-							<div class="block bg-pink">4</div>
-						</div>
-						<div class="col s4">
-							<div class="block bg-pink">5</div>
-						</div>
-						<div class="col s4">
-							<div class="block bg-pink">6</div>
-						</div>
-					</div>
+						<div class="property-cont">
+							<div class="row items-center">
+								<div class="col s9 t-12">
+									<h4 class="semi-bold t-rainbow">justify-content</h4>
+									<p>Aligns flex items along the main axis of the current line of the flex container.
+										This is done after any flexible lengths and any auto margins have been resolved.
+									</p>
 
-					<p class="mb12">flex-flow: row-wrap</p>
-					<div class="row h-flex wrap">
-						<div class="col s4">
-							<div class="block bg-pink">1</div>
-						</div>
-						<div class="col s4">
-							<div class="block bg-pink">2</div>
-						</div>
-						<div class="col s4">
-							<div class="block bg-pink">3</div>
-						</div>
-						<div class="col s4">
-							<div class="block bg-pink">4</div>
-						</div>
-						<div class="col s4">
-							<div class="block bg-pink">5</div>
-						</div>
-						<div class="col s4">
-							<div class="block bg-pink">6</div>
-						</div>
-					</div>
+									<div class="radio-select mb12">
+										<span>justify-content:</span>
+										<input class="opacity-0" type="radio" id="justify-start" value="justify-start"
+											v-model="selectedJustify">
+										<label for="justify-start">flex-start</label>
 
-					<p class="mb12">flex-flow: row-wrap-reverse</p>
-					<div class="row h-flex wrap-reverse">
-						<div class="col s4">
-							<div class="block bg-pink">1</div>
-						</div>
-						<div class="col s4">
-							<div class="block bg-pink">2</div>
-						</div>
-						<div class="col s4">
-							<div class="block bg-pink">3</div>
-						</div>
-						<div class="col s4">
-							<div class="block bg-pink">4</div>
-						</div>
-						<div class="col s4">
-							<div class="block bg-pink">5</div>
-						</div>
-						<div class="col s4">
-							<div class="block bg-pink">6</div>
-						</div>
-					</div>
-				</div>
-			</div>
+										<input class="opacity-0" type="radio" id="justify-end" value="justify-end"
+											v-model="selectedJustify">
+										<label for="justify-end">flex-end</label>
 
-			<div class="grid-cont full-width mb0">
-				<div id="flex-basis" class="output-section bg-lpink col s12">
-					<h2>flex-basis</h2>
-					<p>It sets the initial main size of a flex item. It sets the size of the content box unless otherwise set with box-sizing.</p>
-					<br>
-					<p class="mb24">flex-flow: auto | 0 | value (100px)
-					</p>
+										<input class="opacity-0" type="radio" id="justify-center" value="justify-center"
+											v-model="selectedJustify">
+										<label for="justify-center">center</label>
 
+										<input class="opacity-0" type="radio" id="justify-around" value="justify-around"
+											v-model="selectedJustify">
+										<label for="justify-around">space-around</label>
 
-					<p class="mb12">flex-basis: auto</p>
-					<div class="row h-flex">
-						<div class="col s4 basis-auto">
-							<div class="block bg-pink">1</div>
-						</div>
-						<div class="col s4">
-							<div class="block bg-pink">2</div>
-						</div>
-						<div class="col s4">
-							<div class="block bg-pink">3</div>
-						</div>
-					</div>
+										<input class="opacity-0" type="radio" id="justify-between" value="justify-between"
+											v-model="selectedJustify">
+										<label for="justify-between">space-between</label>
 
-					<p class="mb12">flex-basis: 0</p>
-					<div class="row h-flex">
-						<div class="col s4 basis-0">
-							<div class="block bg-pink">1</div>
-						</div>
-						<div class="col s4">
-							<div class="block bg-pink">2</div>
-						</div>
-						<div class="col s4">
-							<div class="block bg-pink">3</div>
-						</div>
-					</div>
+										<input class="opacity-0" type="radio" id="justify-evenly" value="justify-evenly"
+											v-model="selectedJustify">
+										<label for="justify-evenly">space-evenly</label>
+									</div>
 
-					<p class="mb12">flex-basis: 150px</p>
-					<div class="row h-flex">
-						<div class="col s4 basis-value">
-							<div class="block bg-pink">1</div>
-						</div>
-						<div class="col s4">
-							<div class="block bg-pink">2</div>
-						</div>
-						<div class="col s4">
-							<div class="block bg-pink">3</div>
-						</div>
-					</div>
-				</div>
-			</div>
+									<div class="row" v-bind:class="[selectedJustify]">
+										<div class="col s2">
+											<div class="block bg-pink">1</div>
+										</div>
+										<div class="col s2">
+											<div class="block bg-pink">2</div>
+										</div>
+										<div class="col s2">
+											<div class="block bg-pink">3</div>
+										</div>
+									</div>
+								</div>
 
-			<div class="grid-cont full-width mb0">
-				<div id="flex-grow" class="output-section bg-lpink col s12">
-					<h2>flex-grow</h2>
-					<p>It  specifies how much a flex item will grow relative to the rest of the flex items.</p>
-					<br>
-					<p class="mb24">flex-grow: initial | unset | inherit | 1
-					</p>
+								<div class="col s3 t-12"></div>
+							</div>
+						</div>
 
+						<div class="property-cont">
+							<div class="row items-center">
+								<div class="col s9 t-12">
+									<h4 class="semi-bold t-rainbow">align-items</h4>
+									<p>It sets the default alignment for all of the flex container’s items, including
+										anonymous flex items.</p>
 
-					<p class="mb12">flex-grow: 1</p>
-					<div class="row h-flex">
-						<div class="col s4"  style="flex-grow: 1">
-							<div class="block bg-pink">1</div>
-						</div>
-						<div class="col">
-							<div class="block bg-pink">2</div>
-						</div>
-						<div class="col">
-							<div class="block bg-pink">3</div>
-						</div>
-					</div>
-				</div>
-			</div>
+									<div class="radio-select mb12">
+										<span>align-items:</span>
+										<input class="opacity-0" type="radio" id="items-start" value="items-start"
+											v-model="selectedItems">
+										<label for="items-start">flex-start</label>
 
-			<div class="grid-cont full-width mb0">
-				<div id="flex-shrink" class="output-section bg-lpink col s12">
-					<h2>flex-shrink</h2>
-					<p>It specifies how much a flex item will shrink relative to the rest of the flex items.</p>
-					<br>
-					<p class="mb24">flex-shrink: value <br>
-						The value must be a number, default value is 1.
-					</p>
+										<input class="opacity-0" type="radio" id="items-end" value="items-end"
+											v-model="selectedItems">
+										<label for="items-end">flex-end</label>
 
+										<input class="opacity-0" type="radio" id="items-center" value="items-center"
+											v-model="selectedItems">
+										<label for="items-center">center</label>
 
-					<p class="mb12">flex-shrink: 0</p>
-					<div class="row h-flex">
-						<div class="col s4">
-							<div class="block bg-pink">1</div>
-						</div>
-						<div class="col s4 shrink-unset">
-							<div class="block bg-pink">shrink-unset</div>
-						</div>
-						<div class="col s4">
-							<div class="block bg-pink">1</div>
-						</div>
-						<div class="col s4">
-							<div class="block bg-pink">1</div>
-						</div>
-					</div>
-				</div>
-			</div>
+										<input class="opacity-0" type="radio" id="items-baseline" value="items-baseline"
+											v-model="selectedItems">
+										<label for="items-baseline">baseline</label>
 
-			<div class="grid-cont full-width mb0">
-				<div id="justify-content" class="output-section bg-lpink col s12">
-					<h2>justify-content</h2>
-					<p>Used to align the flex items.</p>
-					<br>
-					<p class="mb24">justify-content: center | flex-end | flex-start | space- between | space-around
-					</p>
+										<input class="opacity-0" type="radio" id="items-stretch" value="items-stretch"
+											v-model="selectedItems">
+										<label for="items-stretch">stretch</label>
+									</div>
 
+									<div class="row" v-bind:class="[selectedItems]" style="height: 100px">
+										<div class="col s4">
+											<div class="block bg-pink mh-auto h-100">1</div>
+										</div>
+										<div class="col s4">
+											<div class="block bg-pink mh-auto h-100">2</div>
+										</div>
+										<div class="col s4">
+											<div class="block bg-pink mh-auto h-100">3</div>
+										</div>
+									</div>
+								</div>
 
-					<p class="mb12"></p>
-					<div class="row h-flex justify-between">
-						<div class="col s3">
-							<div class="block bg-pink">1</div>
+								<div class="col s3 t-12"></div>
+							</div>
 						</div>
-						<div class="col s3">
-							<div class="block bg-pink">2</div>
+
+						<div class="property-cont">
+							<div class="row items-center">
+								<div class="col s9 t-12">
+									<h4 class="semi-bold t-rainbow">align-self</h4>
+									<p>It allows default alignment to be overridden for individual flex items.</p>
+									<div class="radio-select mb12">
+										<span>align-self:</span>
+										<input class="opacity-0" type="radio" id="self-start"
+											value="self-start" v-model="selectedSelf">
+										<label for="self-start">flex-start</label>
+
+										<input class="opacity-0" type="radio" id="self-end" value="self-end"
+											v-model="selectedSelf">
+										<label for="self-end">flex-end</label>
+
+										<input class="opacity-0" type="radio" id="self-center" value="self-center"
+											v-model="selectedSelf">
+										<label for="self-center">center</label>
+
+										<input class="opacity-0" type="radio" id="self-baseline" value="self-baseline"
+											v-model="selectedSelf">
+										<label for="self-baseline">baseline</label>
+
+										<input class="opacity-0" type="radio" id="self-stretch" value="self-stretch"
+											v-model="selectedSelf">
+										<label for="self-stretch">stretch</label>
+									</div>
+
+									<div class="row">
+										<div class="col s4" v-bind:class="[selectedSelf]">
+											<div class="block bg-pink mh-auto h-100">1</div>
+										</div>
+										<div class="col s4">
+											<div class="block bg-pink">2</div>
+										</div>
+										<div class="col s4">
+											<div class="block bg-pink">3</div>
+										</div>
+									</div>
+								</div>
+
+								<div class="col s3 t-12"></div>
+							</div>
 						</div>
-						<div class="col s3">
-							<div class="block bg-pink">3</div>
+
+						<div class="property-cont">
+							<div class="row items-center">
+								<div class="col s9 t-12">
+									<h4 class="semi-bold t-rainbow">align-content</h4>
+									<p> Aligns a flex container’s lines within the flex container when there is extra
+										space in the cross-axis, similar to how justify-content aligns individual items within the main-axis.
+										Note, this property has no effect on a single-line flex container.</p>
+									<div class="radio-select mb12">
+										<span>align-content:</span>
+										<input class="opacity-0" type="radio" id="content-start" value="content-start"
+											v-model="selectedContent">
+										<label for="content-start">flex-start</label>
+
+										<input class="opacity-0" type="radio" id="content-end" value="content-end"
+											v-model="selectedContent">
+										<label for="content-end">flex-end</label>
+
+										<input class="opacity-0" type="radio" id="content-center" value="content-center"
+											v-model="selectedContent">
+										<label for="content-center">center</label>
+
+										<input class="opacity-0" type="radio" id="content-between" value="content-between"
+											v-model="selectedContent">
+										<label for="content-between">space-between</label>
+
+										<input class="opacity-0" type="radio" id="content-around" value="content-around"
+											v-model="selectedContent">
+										<label for="content-around">space-around</label>
+
+										<input class="opacity-0" type="radio" id="content-evenly" value="content-evenly"
+											v-model="selectedContent">
+										<label for="content-evenly">space-evenly</label>
+
+										<input class="opacity-0" type="radio" id="content-stretch" value="content-stretch"
+											v-model="selectedContent">
+										<label for="content-stretch">stretch</label>
+									</div>
+
+									<div class="row box-wrap" v-bind:class="[selectedContent]">
+											<div class="col s4 ">
+												<div class="block bg-pink">1</div>
+											</div>
+											<div class="col s4">
+												<div class="block bg-pink">2</div>
+											</div>
+											<div class="col s4">
+												<div class="block bg-pink">3</div>
+											</div>
+									</div>
+								</div>
+
+								<div class="col s3 t-12"></div>
+							</div>
 						</div>
 					</div>
 				</div>
@@ -470,4 +426,23 @@
 		</div>
 	</div>
 </body>
+
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+<script>
+	new Vue({
+		el: '#app',
+		data: {
+			selectedDirection: [],
+			selectedWrap: [],
+			selectedFlow: [],
+			selectedBasis: [],
+			selectedJustify: [],
+			selectedItems: [],
+			selectedSelf: [],
+			selectedContent: [],
+		}
+	})
+</script>
+
 </html>
